@@ -4,17 +4,19 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 
 const connectDB = require("./config/dbConn")
+connectDB()
 const corsOptions = require("./config/corsOptions")
 
 const PORT = process.env.PORT || 99999
 const app = express()
 
-connectDB()
 app.use(cors(corsOptions))
-app.use(express.json)
+app.use(express.json())
+
+//routers
 app.use("/api/auth", require("./routers/authRoutes"))
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
     res.send("This is the home page")
 })
 mongoose.connection.once('open', () => {
