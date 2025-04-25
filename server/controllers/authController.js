@@ -14,15 +14,15 @@ const login = async (req, res) => {
     const userInfo = {
         _id: foundUser._id,
         fullname: foundUser.fullname,
-        roles: foundUser.roles, 
+        roles: foundUser.roles,
         userid: foundUser.userid,
         email: foundUser.email,
-        phone:foundUser.phone,
-        dateOfBirth:foundUser.dateOfBirth,
-        address:{street:foundUser.address.street,numOfBulding:foundUser.address.numOfBulding,city:foundUser.address.city}
+        phone: foundUser.phone,
+        dateOfBirth: foundUser.dateOfBirth,
+        address: { street: foundUser.address.street, numOfBulding: foundUser.address.numOfBulding, city: foundUser.address.city }
     }
-const accessToken=jwt.sign(userInfo,process.env.ACCESS_TOKEN_SECRET)
-res.json({accesstoken:accessToken})
+    const accessToken = jwt.sign(userInfo, process.env.ACCESS_TOKEN_SECRET)
+    res.json({ accesstoken: accessToken })
 }
 const register = async (req, res) => {
     const { userid, password, fullname, email, phone, street, numOfBulding, city, dateOfBirth, roles } = req.body

@@ -4,7 +4,7 @@ const monthlyScholarshipDetailsSchema = new mongoose.Schema({
         type: date,
         required: true
     },
-    MaximumNumberOfHours: {
+    maximumNumberOfHours: {
         type: Number,
         required: true
     },
@@ -14,4 +14,4 @@ const monthlyScholarshipDetailsSchema = new mongoose.Schema({
     }
 
 },{timestamps:true})
-module.exports=mongoose.model("Monthly_Scholarship_Details",monthlyScholarshipDetailsSchema)
+module.exports=mongoose.model("MonthlyScholarshipDetails",monthlyScholarshipDetailsSchema)

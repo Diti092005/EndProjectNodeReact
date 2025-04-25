@@ -19,6 +19,5 @@ const bankDetailsSchema=new mongoose.Schema({
         type:Number,
         required:true
     }
-},{timestamps:true}
-)
-module.exports=mongoose.model("Bank_Details",bankDetailsSchema)
+},{timestamps:true})
+module.exports=mongoose.model("BankDetails",bankDetailsSchema)
